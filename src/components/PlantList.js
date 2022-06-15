@@ -2,19 +2,12 @@ import React from "react";
 import PlantCard from "./PlantCard";
 
 
-function PlantList({ plants, onDeletePlant, onUpdatePlant }) {
+function PlantList({ plants }) {
   return (
     <ul className="cards">
-      {plants.map((plant) => {
-        return (
-          <PlantCard
-            key={plant.id}
-            plant={plant}
-            onDeletePlant={onDeletePlant}
-            onUpdatePlant={onUpdatePlant}
-          />
-        );
-      })}
+      {plants.map((plant) => (
+          <PlantCard plant={plant} keys={plant.id}/>
+      ))}
     </ul>
   );
 }
